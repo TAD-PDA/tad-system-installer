@@ -1,0 +1,13 @@
+Calibrating EVDEV driver for "ADS7846 Touchscreen" id=6
+	current calibration values (from XInput): min_x=3932, max_x=300 and min_y=294, max_y=3801
+
+Doing dynamic recalibration:
+	Setting calibration data: 3977, 198, 233, 3879
+	--> Making the calibration permanent <--
+  copy the snippet below into '/etc/X11/xorg.conf.d/99-calibration.conf' (/usr/share/X11/xorg.conf.d/ in some distro's)
+Section "InputClass"
+	Identifier	"calibration"
+	MatchProduct	"ADS7846 Touchscreen"
+	Option	"Calibration"	"3977 198 233 3879"
+	Option	"SwapAxes"	"1"
+EndSection
