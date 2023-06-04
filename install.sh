@@ -6,7 +6,9 @@ cd git
 git clone https://github.com/TAD-PDA/tad-nta.git
 git clone https://github.com/TAD-PDA/tad-fofsweeper.git
 git clone https://github.com/TAD-PDA/soft_uart.git
-cp ./tad-nta/scripts/keyboard.sh /home/pi/nta/keyboard.sh
+cd ./tad-nta
+make
+cp ./scripts/keyboard.sh /home/pi/nta/keyboard.sh
 modprobe uinput
 cd ./soft_uart
 make
