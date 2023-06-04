@@ -1,4 +1,4 @@
-cd ~
+cd /home/pi/
 apt install raspberrypi-kernel-headers git -y
 mkdir git
 cd git
@@ -9,11 +9,11 @@ modprobe uinput
 cd ./soft_uart
 make
 make install
-cd ~
+cd /home/pi/
 git clone https://github.com/waveshare/LCD-show.git
 cp 99-input.rules /etc/udev/rules.d/99-input.rules
 cp 99-calibration.conf /etc/X11/xorg.conf.d/99-calibration.conf
-cd ~/LCD-show
+cd /home/pi/LCD-show
 chmod +x LCD35B-show-V2
 apt install zsh -y
 chsh -s /bin/zsh pi
